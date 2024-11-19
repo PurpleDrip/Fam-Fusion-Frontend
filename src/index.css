@@ -7,13 +7,16 @@
   margin: 0;
   box-sizing: border-box;
 }
+button,
+input {
+  outline: 0;
+}
 
 form input,
 form button,
 form textarea,
 form select {
   padding: 0.4rem;
-  border: 1px solid black;
   border-radius: 6px;
 }
 
