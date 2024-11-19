@@ -8,6 +8,7 @@ const Role = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const role = useSelector((state) => state.user.role);
+  document.documentElement.setAttribute("data-theme", "dim");
 
   return (
     <div className="h-screen flex flex-col justify-evenly">
@@ -25,7 +26,7 @@ const Role = () => {
         <div className="role-container w-1/5 flex flex-col items-center gap-4 justify-center">
           <h1 className="text-3xl">WHO ARE U?</h1>
           <button
-            className="btn bg-secondary btn-wide"
+            className="btn bg-secondary btn-wide text-secondary-content hover:text-white"
             onClick={() => {
               console.log("The visiter is an User.");
               dispatch(setUserRole("user"));
@@ -42,7 +43,7 @@ const Role = () => {
             OR
           </div>
           <button
-            className="btn btn-wide bg-accent"
+            className="btn btn-wide bg-accent text-accent-content hover:text-white"
             onClick={() => {
               console.log("The visiter is an Organization.");
               dispatch(setUserRole("organ"));
