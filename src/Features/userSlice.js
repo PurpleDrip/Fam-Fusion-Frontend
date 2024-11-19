@@ -1,20 +1,22 @@
+import { createSlice } from "@reduxjs/toolkit";
+
 const userSlice = createSlice({
   name: "user",
   initialState: {
-    role: null,
-    theme: "dim",
+    role: localStorage.getItem("role") || null,
+    theme: localStorage.getItem("theme") || "dim",
   },
   reducers: {
     setUserRole: (state, action) => {
       state.role = action.payload;
-      if (action.payload === "user") {
-        state.theme = "autumn";
-      } else if (action.payload === "organ") {
-        state.theme = "lemonade";
-      }
+      const theme = action.payload === "user" ? "autumn" : "lemonade";
+      state.theme = theme;
+      localStorage.setItem("role", action.payload);
+      localStorage.setItem("theme", theme);
     },
     setUserTheme: (state, action) => {
       state.theme = action.payload;
+      localStorage.setItem("theme", action.payload);
     },
   },
 });

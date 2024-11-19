@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setUserRole } from "../Features/userSlice";
 import { useNavigate } from "react-router-dom";
@@ -6,10 +6,18 @@ import { useNavigate } from "react-router-dom";
 const Role = () => {
   //check for tokens here
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const role = useSelector((state) => state.user.role);
-  document.documentElement.setAttribute("data-theme", "dim");
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme") || "dim";
+    document.documentElement.setAttribute("data-theme", storedTheme);
+  }, []);
+
+  const handleRoleSelection = (role) => {
+    dispatch(setUserRole(role));
+    navigate(`/${role}`);
+  };
   return (
     <div className="h-screen flex flex-col justify-evenly">
       <h1 className="text-[5rem] ml-[12rem] ">Fam Fusion</h1>
@@ -29,8 +37,7 @@ const Role = () => {
             className="btn bg-secondary btn-wide text-secondary-content hover:text-white"
             onClick={() => {
               console.log("The visiter is an User.");
-              dispatch(setUserRole("user"));
-              navigate("/user");
+              handleRoleSelection("user");
             }}
           >
             USER
@@ -46,8 +53,7 @@ const Role = () => {
             className="btn btn-wide bg-accent text-accent-content hover:text-white"
             onClick={() => {
               console.log("The visiter is an Organization.");
-              dispatch(setUserRole("organ"));
-              navigate("/organ");
+              handleRoleSelection("organ");
             }}
           >
             ORGANIZATION
