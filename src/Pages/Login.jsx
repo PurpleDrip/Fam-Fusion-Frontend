@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import ThemeController from "../Components/ThemeController";
 
 const Login = () => {
   const [password, setPassword] = useState("");
@@ -19,11 +20,16 @@ const Login = () => {
     console.log(password);
   };
 
+  useEffect(() => {
+    const roleBasedTheme = role === "user" ? "autumn" : "lemonade";
+    document.documentElement.setAttribute("data-theme", roleBasedTheme);
+  }, [role]);
+
   return (
     <div className="h-screen w-screen flex items-center justify-center">
       <div className="form-container border p-8 rounded-xl bg-secondary">
         <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
-          <h1 className="text-secondary-content text-3xl">Login</h1>
+          <h1 className="text-secondary-content text-3xl ">LOGIN</h1>
           <label className="input input-bordered flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -70,14 +76,6 @@ const Login = () => {
               }}
             />
           </label>
-          {/* <input
-            type="text"
-            name=""
-            placeholder="Username"
-            className="bg-base-200 text-base-content"
-          />
-          <input type="email" name="" placeholder="Email" />
-          <input type="text" placeholder="Password" /> */}
           <button type="submit" className="btn btn-primary">
             Submit
           </button>
@@ -86,6 +84,7 @@ const Login = () => {
           </Link>
         </form>
       </div>
+      <ThemeController theme="dracula" />
     </div>
   );
 };
