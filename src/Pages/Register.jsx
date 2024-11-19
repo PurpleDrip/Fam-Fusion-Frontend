@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import ThemeController from "../Components/ThemeController";
 
 const Register = () => {
   const role = useSelector((state) => state.user.role);
@@ -13,27 +14,54 @@ const Register = () => {
   }, [role, navigate]);
   return (
     <div className="h-screen w-screen flex items-center justify-center">
-      <div className="form-container border p-8 rounded-xl">
+      <div className="form-container p-8 rounded-xl bg-secondary">
         <form className="flex flex-col gap-8">
-          <h1>Register</h1>
-          <input type="text" name="" placeholder="Username" />
-          <input type="email" name="" placeholder="Email" />
-          <select name="" id="">
-            <option value="Gender" selected disabled>
+          <h1 className="text-secondary-content text-3xl">REGISTER</h1>
+          <label className="input input-bordered flex items-center gap-2">
+            Username
+            <input type="text" className="grow" placeholder="John Doe" />
+          </label>
+          <label className="input input-bordered flex items-center gap-2">
+            Email
+            <input
+              type="email"
+              className="grow"
+              placeholder="johndoe@gmail.com"
+            />
+          </label>
+          <select className="select select-bordered w-full max-w-xs">
+            <option disabled selected>
               Gender
             </option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Others">Others</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Others</option>
           </select>
-          <textarea name="" id="" placeholder="Address" />
-          <input type="password" placeholder="Password" />
-          <button type="submit">Submit</button>
-          <Link to="/user" className="mx-auto -mt-4">
+          <label className="form-control -mt-4">
+            <div className="label">
+              <span className="label-text">Address</span>
+            </div>
+            <textarea
+              className="textarea textarea-bordered h-20"
+              placeholder="22nd Street, Winston Road..."
+            ></textarea>
+          </label>
+          <label className="input input-bordered flex items-center gap-2">
+            Password
+            <input type="password" className="grow" placeholder="johndoe123" />
+          </label>
+          <button
+            type="submit"
+            className="btn btn-primary text-primary-content"
+          >
+            Submit
+          </button>
+          <Link to="/user" className="mx-auto -mt-4 hover:underline">
             Already have an account?
           </Link>
         </form>
       </div>
+      <ThemeController theme="dracula" />
     </div>
   );
 };

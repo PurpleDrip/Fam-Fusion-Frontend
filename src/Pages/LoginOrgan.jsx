@@ -26,9 +26,9 @@ const LoginOrgan = () => {
 
   return (
     <div className="h-screen w-screen flex items-center justify-center">
-      <div className="form-container border p-8 rounded-xl bg-primary">
+      <div className="form-container p-8 rounded-xl bg-primary">
         <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
-          <h1 className="text-primary-content text-3xl ">REGISTER</h1>
+          <h1 className="text-primary-content text-3xl ">LOGIN</h1>
           <label className="input input-bordered flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@ const LoginOrgan = () => {
           </button>
           <Link
             to="/register/organ"
-            className="mx-auto -mt-4 text-primary-content"
+            className="mx-auto -mt-4 text-primary-content hover:underline"
           >
             Don't have an account?
           </Link>

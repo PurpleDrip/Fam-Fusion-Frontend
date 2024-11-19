@@ -27,7 +27,7 @@ const Login = () => {
 
   return (
     <div className="h-screen w-screen flex items-center justify-center">
-      <div className="form-container border p-8 rounded-xl bg-secondary">
+      <div className="form-container p-8 rounded-xl bg-secondary">
         <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
           <h1 className="text-secondary-content text-3xl ">LOGIN</h1>
           <label className="input input-bordered flex items-center gap-2">
@@ -79,7 +79,7 @@ const Login = () => {
           <button type="submit" className="btn btn-primary">
             Submit
           </button>
-          <Link to="/register/user" className="mx-auto -mt-4">
+          <Link to="/register/user" className="mx-auto -mt-4 hover:underline">
             Don't have an account?
           </Link>
         </form>
