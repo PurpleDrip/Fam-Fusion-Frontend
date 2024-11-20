@@ -17,7 +17,7 @@ const TitleBar = () => {
         <Link to="/adopt-now" className="btn btn-sm btn-primary">
           Adopt Now
         </Link>
-        <div className="dropdown ">
+        <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-sm btn-ghost">
             Profile
             <svg
@@ -32,21 +32,17 @@ const TitleBar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content bg-base-300 rounded-box z-[1] w-28 p-2 shadow-2xl"
+            className="dropdown-content bg-base-300 rounded-box z-[1] w-28 p-2 shadow-2xl text-base-content"
           >
             <li>
-              <Link className=" btn btn-sm btn-block btn-ghost justify-start">
+              <Link className=" btn btn-sm btn-block btn-ghost">
                 Edit Profile
               </Link>
             </li>
             <li></li>
             <li>
-              <Link className=" btn btn-sm btn-block btn-ghost justify-start">
-                Adoption History
-              </Link>
-              <Link className=" btn btn-sm btn-block btn-ghost justify-start">
-                Settings
-              </Link>
+              <Link className=" btn btn-sm btn-block btn-ghost">History</Link>
+              <Link className=" btn btn-sm btn-block btn-ghost">Settings</Link>
             </li>
           </ul>
         </div>

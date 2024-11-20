@@ -11,21 +11,18 @@ const Facts = () => {
           </h3>
           <p className="text-center mt-2">Children in Need of Adoption</p>
         </div>
-        {/* Fact 2 */}
         <div className="w-[25rem] fact-card bg-secondary text-secondary-content p-6 rounded-lg shadow-md ">
           <h3 className="text-2xl font-semibold text-center">87%</h3>
           <p className="text-center mt-2">
             Increase in Adoptive Families in 5 Years
           </p>
         </div>
-        {/* Fact 3 */}
         <div className="w-[25rem] fact-card bg-secondary text-secondary-content p-6 rounded-lg shadow-md">
           <h3 className="text-2xl font-semibold text-center">1 in 10</h3>
           <p className="text-center mt-2">
             Children in Orphanages Find Forever Homes
           </p>
         </div>
-        {/* Fact 4 - New Fact */}
         <div className="w-[25rem] fact-card bg-secondary text-secondary-content p-6 rounded-lg shadow-md">
           <h3 className="text-2xl font-semibold text-center">40%</h3>
           <p className="text-center mt-2">
