@@ -45,7 +45,7 @@ const AdoptHero = () => {
     <div className="flex min-h-screen mt-4 mx-8 gap-4">
       {/* Left Sidebar */}
       <div className="left w-1/4 p-4 sticky h-[70vh] flex items-center justify-center top-24">
-        <div className="filter-container border p-4 w-full">
+        <div className="filter-container border border-accent rounded-3xl p-4 w-full">
           <h1 className="text-3xl text-base-content mb-4">Filters</h1>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             {/* Name Filter */}
