@@ -86,7 +86,6 @@ const LoginOrgan = () => {
           </Link>
         </form>
       </div>
-      <ThemeController theme="dim" />
     </div>
   );
 };

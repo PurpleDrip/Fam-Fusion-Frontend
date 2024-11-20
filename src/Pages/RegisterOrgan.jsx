@@ -78,7 +78,6 @@ const RegisterOrgan = () => {
           </Link>
         </form>
       </div>
-      <ThemeController theme="dim" />
     </div>
   );
 };

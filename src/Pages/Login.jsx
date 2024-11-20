@@ -84,7 +84,6 @@ const Login = () => {
           </Link>
         </form>
       </div>
-      <ThemeController />
     </div>
   );
 };
