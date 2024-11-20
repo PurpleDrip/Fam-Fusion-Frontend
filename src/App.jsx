@@ -7,6 +7,8 @@ import Register from "./Pages/Register";
 import RegisterOrgan from "./Pages/RegisterOrgan";
 import LoginOrgan from "./Pages/LoginOrgan";
 import Role from "./Pages/Role";
+import Home from "./Pages/Home.jsx";
+import Adopt from "./Pages/Adopt.jsx";
 
 const App = () => {
   return (
@@ -19,6 +21,8 @@ const App = () => {
             <Route path="/organ" element={<LoginOrgan />} />
             <Route path="/register/user" element={<Register />} />
             <Route path="/register/organ" element={<RegisterOrgan />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/adopt" element={<Adopt />} />
           </Routes>
         </Router>
       </Provider>

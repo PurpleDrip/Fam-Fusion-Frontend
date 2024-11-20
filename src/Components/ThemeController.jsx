@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setUserTheme } from "../Features/userSlice";
 
-const ThemeController = () => {
+const ThemeController = (props) => {
   const dispatch = useDispatch();
   const { role, theme } = useSelector((state) => state.user);
 
@@ -19,7 +19,7 @@ const ThemeController = () => {
   };
 
   return (
-    <div className="absolute top-[2rem] right-[2rem]">
+    <div className="absolute top-[5rem] right-[1rem] ">
       <label className="swap swap-rotate">
         {/* Hidden checkbox for theme control */}
         <input
