@@ -20,7 +20,7 @@ function SectionWithImage({ title, paragraphs, imageSrc, reverse = false }) {
         />
       </div>
       <div className="content-container border-accent border w-full p-8 rounded-3xl">
-        <h1 className="text-3xl mb-8 text-primary">{title}</h1>
+        <h1 className="text-3xl mb-8 text-primary font-semibold">{title}</h1>
         <div className="text-lg">
           {paragraphs.map((paragraph, index) => (
             <p key={index} className="mb-4">

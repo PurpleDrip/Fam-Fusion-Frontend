@@ -2,7 +2,7 @@ import React from "react";
 
 const Facts = () => {
   return (
-    <div className="facts bg-base py-16">
+    <div className="facts bg-base py-16 ">
       <div className="gap-8 px-8 flex flex-wrap items-center justify-center">
         <div className="w-[25rem] fact-card bg-secondary text-secondary-content p-6 rounded-lg shadow-md">
           <h3 className="text-2xl font-semibold text-center text-alert">
