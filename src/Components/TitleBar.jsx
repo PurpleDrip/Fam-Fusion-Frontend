@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 
 const TitleBar = () => {
   return (
-    <div className="px-8 text-base-content h-16 bg-base-300 mx-4 mt-4 flex items-center justify-between sticky top-4 z-10 rounded-3xl">
+    <div className="px-8 text-accent-content h-16 bg-accent mx-4 mt-4 flex items-center justify-between sticky top-4 z-10 rounded-3xl">
       <div>
-        <a href="/home">Fam Fusion</a>
+        <a href="/home" className="text-4xl">
+          Fam Fusion
+        </a>
       </div>
       <div className="flex gap-4">
         <Link to="/about-us" className="btn btn-sm btn-ghost">

@@ -19,7 +19,7 @@ const ThemeController = (props) => {
   };
 
   return (
-    <div className="absolute top-[5rem] right-[1rem] ">
+    <div className="absolute top-[5rem] right-[1rem] text-base-content">
       <label className="swap swap-rotate">
         {/* Hidden checkbox for theme control */}
         <input

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Cards from "../Components/Cards";
 
 const AdoptHero = () => {
   const [filters, setFilters] = useState({
@@ -45,7 +46,7 @@ const AdoptHero = () => {
       {/* Left Sidebar */}
       <div className="left w-1/4 p-4 sticky h-[70vh] flex items-center justify-center top-24">
         <div className="filter-container border p-4 w-full">
-          <h1 className="text-3xl text-base-content mb-4">FILTERS</h1>
+          <h1 className="text-3xl text-base-content mb-4">Filters</h1>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             {/* Name Filter */}
             <input
@@ -164,7 +165,17 @@ const AdoptHero = () => {
       </div>
 
       {/* Center Content */}
-      <div className="center w-1/2 h-[200vh]">Center</div>
+      <div className="center w-1/2 min-h-[100vh] mt-8">
+        <div className="card-container flex flex-wrap gap-8">
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+        </div>
+      </div>
 
       {/* Right Sidebar */}
       <div className="right w-1/4 sticky top-24 h-[85vh]  flex justify-center flex-col">
