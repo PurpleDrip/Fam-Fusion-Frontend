@@ -8,24 +8,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-button,
-input {
   outline: 0;
-}
-
-form input,
-form button,
-form textarea,
-form select {
-  padding: 0.4rem;
-  border-radius: 6px;
-}
-
-@media (max-width: 768px) {
-  .role-container {
-    flex-direction: column;
-  }
 }
 
 /* autumn -user light
