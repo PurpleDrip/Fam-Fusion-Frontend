@@ -161,7 +161,7 @@ function Home() {
       <div className="comments-title min-h-[20vh] max-w-[80vw] mx-auto z-0 text-[11rem]">
         <h1 className="text-center">Hear From Our Satisfied Users</h1>
       </div>
-      <div className="review-section">
+      <div className="review-section h-[80vh]">
         <div className="reviews">
           {DEMO_LIST.map((item) => (
             <div
@@ -170,13 +170,13 @@ function Home() {
               key={item.id}
               style={{ "--pos": item.id - 1 }}
             >
-              <div className="profile-pic h-[10rem] w-[10rem] ">
+              <div className="profile-pic h-[10rem] w-[10rem] m-0 mx-auto">
                 <img
                   src="https://via.placeholder.com/160"
                   className="rounded-badge"
                 />
               </div>
-              <h2 className="text-2xl">{item.name}</h2>
+              <h2 className="text-2xl mx-0">{item.name}</h2>
               <p>{item.review}</p>
             </div>
           ))}

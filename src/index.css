@@ -19,9 +19,6 @@ img {
   object-position: center;
 }
 
-.review-section {
-  height: 80vh;
-}
 .reviews {
   position: relative;
   top: 15%;
@@ -64,13 +61,6 @@ img {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-.card h2 {
-  margin-left: 1rem;
-}
-
-.profile-pic {
-  margin: 0 auto;
 }
 
 @keyframes slide {
