@@ -14,7 +14,7 @@ const TitleBar = () => {
         <Link to="/about-us" className="btn btn-sm btn-ghost">
           Liked Profiles
         </Link>
-        <Link to="/adopt-now" className="btn btn-sm btn-primary">
+        <Link to="/adopt" className="btn btn-sm btn-primary">
           Adopt Now
         </Link>
         <div className="dropdown">
