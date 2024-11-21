@@ -20,10 +20,7 @@ const Login = () => {
     console.log(password);
   };
 
-  useEffect(() => {
-    const roleBasedTheme = role === "user" ? "autumn" : "lemonade";
-    document.documentElement.setAttribute("data-theme", roleBasedTheme);
-  }, [role]);
+  document.documentElement.setAttribute("data-theme", "forest");
 
   return (
     <div className="h-screen w-screen flex items-center justify-center">
@@ -79,7 +76,10 @@ const Login = () => {
           <button type="submit" className="btn btn-primary">
             Submit
           </button>
-          <Link to="/register/user" className="mx-auto -mt-4 hover:underline">
+          <Link
+            to="/register/user"
+            className="mx-auto -mt-4 hover:underline text-primary-content"
+          >
             Don't have an account?
           </Link>
         </form>

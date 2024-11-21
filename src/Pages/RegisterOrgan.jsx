@@ -15,10 +15,8 @@ const RegisterOrgan = () => {
   return (
     <div className="h-screen w-screen flex items-center justify-center">
       <div className="form-container p-8 rounded-xl bg-primary">
-        <form className="flex flex-col gap-4">
-          <h1 className="text-primary-content text-2xl">
-            REGISTER ORGANIZATION
-          </h1>
+        <form className="flex flex-col gap-4 w-[18rem]">
+          <h1 className="text-primary-content text-2xl">REGISTER</h1>
           <label className="form-control w-full max-w-xs">
             <div className="label">
               <span className="label-text text-primary-content">
@@ -66,7 +64,7 @@ const RegisterOrgan = () => {
           </label>
           <button
             type="submit"
-            className="btn btn-secondary text-secondary-content"
+            className="btn btn-accent text-secondary-content"
           >
             Submit
           </button>

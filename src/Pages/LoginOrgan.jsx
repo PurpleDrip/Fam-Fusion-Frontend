@@ -19,10 +19,7 @@ const LoginOrgan = () => {
     console.log(password);
   };
 
-  useEffect(() => {
-    const roleBasedTheme = role === "user" ? "autumn" : "lemonade";
-    document.documentElement.setAttribute("data-theme", roleBasedTheme);
-  }, [role]);
+  document.documentElement.setAttribute("data-theme", "dracula");
 
   return (
     <div className="h-screen w-screen flex items-center justify-center">
@@ -75,7 +72,7 @@ const LoginOrgan = () => {
               }}
             />
           </label>
-          <button type="submit" className="btn btn-secondary">
+          <button type="submit" className="btn btn-accent">
             Submit
           </button>
           <Link

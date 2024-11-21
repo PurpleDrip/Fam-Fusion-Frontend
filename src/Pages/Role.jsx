@@ -9,10 +9,7 @@ const Role = () => {
   const role = useSelector((state) => state.user.role);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const storedTheme = localStorage.getItem("theme") || "dim";
-    document.documentElement.setAttribute("data-theme", storedTheme);
-  }, []);
+  document.documentElement.setAttribute("data-theme", "dim");
 
   const handleRoleSelection = (role) => {
     dispatch(setUserRole(role));

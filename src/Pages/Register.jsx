@@ -39,7 +39,7 @@ const Register = () => {
           </select>
           <label className="form-control -mt-4">
             <div className="label">
-              <span className="label-text">Address</span>
+              <span className="label-text text-primary-content">Address</span>
             </div>
             <textarea
               className="textarea textarea-bordered h-20"
@@ -56,7 +56,10 @@ const Register = () => {
           >
             Submit
           </button>
-          <Link to="/user" className="mx-auto -mt-4 hover:underline">
+          <Link
+            to="/user"
+            className="mx-auto -mt-4 hover:underline text-primary-content"
+          >
             Already have an account?
           </Link>
         </form>

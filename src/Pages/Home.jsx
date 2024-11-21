@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import ThemeController from "../Components/ThemeController";
 import TitleBar from "../Components/TitleBar";
 import Facts from "../Components/Facts";
 import SectionWithImage from "../Components/SectionWithImage";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const DEMO_LIST = [
@@ -87,6 +87,13 @@ function Home() {
   ];
 
   const role = useSelector((state) => state.user.role);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (role !== "user") {
+      navigate("/");
+    }
+  });
 
   return (
     <div className="min-h-screen">
