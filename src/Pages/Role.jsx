@@ -1,23 +1,20 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setUserRole } from "../Features/userSlice";
 import { useNavigate } from "react-router-dom";
 
 const Role = () => {
   //check for tokens here
-  const navigate = useNavigate();
-  const role = useSelector((state) => state.user.role);
   const dispatch = useDispatch();
-
-  document.documentElement.setAttribute("data-theme", "dim");
+  const navigate = useNavigate();
 
   const handleRoleSelection = (role) => {
     dispatch(setUserRole(role));
-    navigate(`/${role}`);
+    navigate("/home");
   };
   return (
     <div className="h-screen flex flex-col justify-evenly">
-      <h1 className="text-[5rem] ml-[12rem] ">Fam Fusion</h1>
+      <h1 className="text-[5rem] ml-[12rem] poppins-light ">Fam Fusion</h1>
       <div className="role-wrapper flex items-center justify-center gap-16 ">
         <div className="video-container w-3/5">
           <video
@@ -29,7 +26,7 @@ const Role = () => {
           ></video>
         </div>
         <div className="role-container w-1/5 flex flex-col items-center gap-4 justify-center">
-          <h1 className="text-3xl">WHO ARE U?</h1>
+          <h1 className="text-3xl poppins-thin">WHO ARE U?</h1>
           <button
             className="btn bg-secondary btn-wide text-secondary-content hover:text-white"
             onClick={() => {

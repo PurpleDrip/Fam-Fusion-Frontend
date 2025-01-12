@@ -9,6 +9,7 @@ import LoginOrgan from "./Pages/LoginOrgan";
 import Role from "./Pages/Role";
 import Home from "./Pages/Home.jsx";
 import Adopt from "./Pages/Adopt.jsx";
+import Profile from "./Pages/Profile.jsx";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/register/organ" element={<RegisterOrgan />} />
             <Route path="/home" element={<Home />} />
             <Route path="/adopt" element={<Adopt />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </Router>
       </Provider>

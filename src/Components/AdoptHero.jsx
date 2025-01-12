@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Cards from "../Components/Cards";
+import data from "../../data.js";
+import { useSelector } from "react-redux";
 
 const AdoptHero = () => {
   const [filters, setFilters] = useState({
@@ -41,11 +43,23 @@ const AdoptHero = () => {
     });
   };
 
+  const randomProfile = useSelector((state) => {
+    const profiles = state.profile.likedProfiles;
+    if (!profiles || profiles.length === 0) return {};
+    return profiles[Math.floor(Math.random() * profiles.length)];
+  });
+
+  const last2Viewed = useSelector((state) => {
+    const viewedProfiles = state.profile.viewedProfiles;
+    if (!viewedProfiles || viewedProfiles.length < 2) return [];
+    return viewedProfiles.slice(-2);
+  });
+
   return (
     <div className="flex min-h-screen mt-4 mx-8 gap-4">
       {/* Left Sidebar */}
-      <div className="left w-1/4 p-4 sticky h-[70vh] flex items-center justify-center top-24">
-        <div className="filter-container border border-accent rounded-3xl p-4 w-full">
+      <div className="left w-1/4 p-4 sticky h-[70vh] flex items-center justify-center top-24 text-black">
+        <div className="filter-container border border-accent rounded-3xl p-4 w-full bg-gray-200">
           <h1 className="text-3xl text-base-content mb-4">Filters</h1>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             {/* Name Filter */}
@@ -167,13 +181,9 @@ const AdoptHero = () => {
       {/* Center Content */}
       <div className="center w-1/2 min-h-[100vh] mt-8">
         <div className="card-container flex flex-wrap gap-8">
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
+          {data.map((atom, key) => (
+            <Cards data={atom} key={key} />
+          ))}
         </div>
       </div>
 
@@ -199,8 +209,11 @@ const AdoptHero = () => {
             </div>
 
             {/* Random Generator */}
+
             <div className="p-4 border-b">
-              <h2 className="text-xl font-bold">Random Profile</h2>
+              <h2 className="text-xl font-bold">
+                {randomProfile.name || "Random Profile"}
+              </h2>
               <div className="mt-2">
                 <img
                   src="https://via.placeholder.com/100"
