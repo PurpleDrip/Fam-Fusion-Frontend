@@ -34,7 +34,7 @@ const Profile = () => {
   }
 
   const openChat = () => {
-    navigate(`/chat/${userID}`);
+    navigate(`/chat/${id}`);
   };
 
   const handleAdoptNow = () => {

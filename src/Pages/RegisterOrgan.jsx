@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { hasRegistered, setorganName } from "../Features/organSlice";
+import { setID } from "../Features/userSlice";
 
 const RegisterOrgan = () => {
   const role = useSelector((state) => state.user.role);
@@ -33,6 +34,7 @@ const RegisterOrgan = () => {
         console.log(res);
         dispatch(setorganName(res.data.name));
         dispatch(hasRegistered());
+        dispatch(setID(res.data.id));
         navigate("/dashboard");
       })
       .catch((err) => {

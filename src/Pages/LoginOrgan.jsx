@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { hasRegistered, setorganName } from "../Features/organSlice";
+import { setID } from "../Features/userSlice";
 
 const LoginOrgan = () => {
   const [username, setUsername] = useState("");
@@ -32,6 +33,7 @@ const LoginOrgan = () => {
         console.log(res);
         dispatch(setorganName(res.data.name));
         dispatch(hasRegistered());
+        dispatch(setID(res.data.id));
         navigate("/dashboard");
       })
       .catch((err) => {

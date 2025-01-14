@@ -34,7 +34,7 @@ const App = () => {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/notifications" element={<Dashboard />} />
             <Route path="/addchild" element={<AddChild />} />
-            <Route path="/chat" element={<Chat />} />
+            <Route path="/chat/:id" element={<Chat />} />
             <Route path="/chatorg" element={<ChatORP />} />
             <Route path="/likedprofiles" element={<LikedProfiles />} />
             <Route path="/history" element={<History />} />
