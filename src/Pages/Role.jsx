@@ -1,16 +1,36 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setUserRole } from "../Features/userSlice";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
+import { use } from "react";
+import axios from "axios";
 
 const Role = () => {
+  useEffect(() => {
+    dispatch(setUserRole(""));
+  }, []);
+
+  axios
+    .post(
+      "http://localhost:3000/api/checkforToken",
+      {},
+      { withCredentials: true }
+    )
+    .then((res) => {
+      console.log(res);
+      handleRoleSelection(res.data.role);
+    })
+    .catch((err) => console.log(err));
   //check for tokens here
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleRoleSelection = (role) => {
     dispatch(setUserRole(role));
-    navigate("/home");
+    {
+      role === "user" && navigate("/home");
+      role === "organ" && navigate("/dashboard");
+    }
   };
   return (
     <div className="h-screen flex flex-col justify-evenly">

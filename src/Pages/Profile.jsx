@@ -1,57 +1,101 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import TitleBar from "../Components/TitleBar";
+import { useSelector } from "react-redux";
+import Badges from "../Components/Badges";
+import { FaHeart } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const Profile = () => {
   const { id } = useParams();
+  const [profile, setProfile] = useState(null);
+
+  // Redux selectors
+  const allProfiles = useSelector((state) => state.profile.allProfiles);
+  const userID = useSelector((state) => state.user.id);
+  const isValid = useSelector((state) => state.user.isValid);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (allProfiles?.length > 0) {
+      const foundProfile = allProfiles.find((p) => p.id === parseInt(id, 10));
+      setProfile(foundProfile);
+    }
+  }, [id, allProfiles]);
+
+  // Handle case where profile is not found
+  if (!profile) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        Profile not found.
+      </div>
+    );
+  }
+
+  const openChat = () => {
+    navigate(`/chat/${userID}`);
+  };
+
+  const handleAdoptNow = () => {
+    if (isValid) {
+      toast("A request has been sent to the organization regarding adoption.");
+    } else {
+      toast("Please verify yourself first.");
+      navigate("/verify");
+    }
+  };
+
   return (
     <>
       <TitleBar />
-      <div className=" h-[90vh] flex">
-        <div className="w-1/3 flex items-center justify-center flex-col">
+      <div className="h-[92.3vh] flex overflow-hidden poppins-medium">
+        {/* Left Section */}
+        <div className="w-1/3 flex flex-col items-center justify-center">
           <img
-            src="https://via.placeholder.com/400"
-            alt="{title}"
+            src="https://picsum.photos/480"
+            alt={profile.name}
             className="z-0 rounded-full bg-white w-[30rem] mb-8"
           />
-          <h1 className="text-2xl">Name</h1>
-          <h2>Age</h2>
-          <h2>From</h2>
-        </div>
-        <div className="flex w-2/3 p-20 flex-col">
-          <h1 className="text-3xl mb-4 text-primary">
-            Organization Name-{" "}
-            <span className="text-base-content">Panther</span>
-          </h1>
-          <h2 className="text-xl mb-8 text-primary">
-            Organization Address-
-            <span className="text-base-content"> Address</span>
+          <h1 className="text-2xl">{profile.name}</h1>
+          <h2>{profile.age} years old</h2>
+          <h2>From {profile.from}</h2>
+          <h2 className="text-3xl mt-4">
+            {profile.gender === "Male" ? "👦" : "👧"}
           </h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Perspiciatis ullam repellendus facilis quisquam deserunt impedit
-            totam consequuntur dignissimos cumque laudantium, excepturi nulla
-            dolorem sequi enim quis autem rerum nemo beatae. Nostrum eligendi
-            iusto totam repellat incidunt accusamus illo perspiciatis, provident
-            reiciendis eaque in, qui quidem quis fugit tempora omnis aspernatur,
-            alias possimus mollitia impedit voluptate. Et esse sapiente
-            accusamus veniam. Eveniet quia provident ut accusamus eligendi.
-            Natus quod voluptate impedit commodi dolores ex autem. Natus,
-            inventore magni voluptatibus aliquam tempora, minima corrupti ut
-            repudiandae delectus cum vitae unde voluptates corporis. Beatae
-            accusantium, voluptatum nihil quis voluptas sequi? Nam optio
-            quibusdam autem quasi, consectetur similique dignissimos culpa
-            impedit commodi perferendis reiciendis provident non fugiat ratione
-            alias iure? Nulla voluptatem dolore cupiditate! Vero in vel quae
-            totam labore voluptatibus veritatis voluptatem unde harum voluptas
-            ratione dolorem ipsa magnam explicabo, dignissimos optio asperiores
-            iure expedita? Odit vel perferendis consequuntur ea officiis ratione
-            quis! Praesentium ad, quis, asperiores necessitatibus quos, neque
-            autem natus ipsum aspernatur eos dignissimos aliquid debitis
-            perspiciatis nostrum nobis velit. Inventore temporibus veniam odit
+        </div>
+
+        {/* Right Section */}
+        <div className="w-2/3 p-8 flex flex-col">
+          <h1 className="text-2xl mb-4 text-primary">
+            Organization Name:
+            <span className="ml-4 text-white">{profile.organizationName}</span>
+          </h1>
+          <h2 className="text-2xl mb-4 text-primary">
+            Organization Address:
+            <span className="ml-4 text-white">
+              {profile.organizationAddress}
+            </span>
+          </h2>
+          <p className="text-2xl mb-4">
+            <span className="text-primary">Words from the Kid:</span>{" "}
+            {profile.textFromChild}
           </p>
-          <div className="my-20 flex gap-4 mx-auto">
-            <button className="btn btn-secondary btn-wide btn-outline">
+          <h2 className="text-2xl mb-4 text-primary">
+            Health Status:
+            <span className="ml-4 text-white">{profile.health}</span>
+          </h2>
+          <div className="flex flex-wrap gap-4 items-center mb-8">
+            <h2 className="text-2xl text-primary">Hobbies:</h2>
+            {profile.hobbies.map((hobby, index) => (
+              <Badges key={index} value={hobby} />
+            ))}
+          </div>
+          <div className="flex gap-4 my-4">
+            <button
+              className="btn btn-secondary btn-wide btn-outline"
+              onClick={openChat}
+            >
               Message
             </button>
             <button className="btn btn-secondary btn-wide btn-outline">
@@ -61,8 +105,22 @@ const Profile = () => {
               Video Call
             </button>
           </div>
+          <div className="flex justify-center mb-20 mt-auto">
+            <button
+              className="px-8 py-2 bg-white text-black border border-white rounded font-semibold hover:bg-black hover:text-white"
+              onClick={handleAdoptNow}
+            >
+              Adopt Now
+            </button>
+          </div>
         </div>
       </div>
+
+      {profile.isFavourite && (
+        <div className="absolute top-32 right-20 z-50">
+          <FaHeart color="red" size={30} />
+        </div>
+      )}
     </>
   );
 };

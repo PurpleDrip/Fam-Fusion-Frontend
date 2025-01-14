@@ -10,15 +10,26 @@ const UserHome = () => {
       id: 1,
       name: "John Doe",
       review: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores officia excepturi laudantium nobis illum ipsum ad ullam impedit iste, vitae dolor pariatur aliquam, tempore voluptas sint fugit soluta maxime inventore!
-            Fugiat officia, molestias quo, est placeat debitis perferendis ipsam tempora excepturi tenetur explicabo omnis quae reprehenderit ad eum necessitatibus incidunt illo vitae nesciunt recusandae? Soluta iste ratione optio repellat nam?
-            Consectetur nostrum dignissimos eaque officia. Laudantium aut in vel! Magnam perferendis deserunt, sunt aut quibusdam, accusantium culpa ea magni ducimus tempora harum molestias quisquam, saepe mollitia nobis odit fuga sint.
-            Excepturi optio omnis tempore cum cupiditate at aspernatur delectus deserunt vitae unde eos ipsum, quam tenetur quis voluptates magnam error cumque autem labore dignissimos nam magni velit. Facilis, id temporibus!
-            Iure, neque! Sequi ab repellat minus itaque delectus vitae et non nesciunt! Nisi quam ducimus eum temporibus expedita. Similique aliquam accusamus mollitia necessitatibus modi a nostrum nobis. Quisquam, vero minus.`,
+                Fugiat officia, molestias quo, est placeat debitis perferendis ipsam tempora excepturi tenetur explicabo omnis quae reprehenderit ad eum necessitatibus incidunt illo vitae nesciunt recusandae? Soluta iste ratione optio repellat nam?
+                Consectetur nostrum dignissimos eaque officia. Laudantium aut in vel! Magnam perferendis deserunt, sunt aut quibusdam, accusantium culpa ea magni ducimus tempora harum molestias quisquam, saepe mollitia nobis odit fuga sint.
+                Excepturi optio omnis tempore cum cupiditate at aspernatur delectus deserunt vitae unde eos ipsum, quam tenetur quis voluptates magnam error cumque autem labore dignissimos nam magni velit. Facilis, id temporibus!
+                Iure, neque! Sequi ab repellat minus itaque delectus vitae et non nesciunt! Nisi quam ducimus eum temporibus expedita. Similique aliquam accusamus mollitia necessitatibus modi a nostrum nobis. Quisquam, vero minus.`,
       image:
         "https://www.google.com/imgres?q=image&imgurl=https%3A%2F%2Fgratisography.com%2Fwp-content%2Fuploads%2F2024%2F03%2Fgratisography-funflower-800x525.jpg&imgrefurl=https%3A%2F%2Fgratisography.com%2F&docid=YAe2I9AqIHgndM&tbnid=5RFroDSkyf1y6M&vet=12ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA..i&w=800&h=525&hcb=2&itg=1&ved=2ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA",
     },
     {
       id: 2,
+      name: "John Doe",
+      review: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores officia excepturi laudantium nobis illum ipsum ad ullam impedit iste, vitae dolor pariatur aliquam, tempore voluptas sint fugit soluta maxime inventore!
+                    Fugiat officia, molestias quo, est placeat debitis perferendis ipsam tempora excepturi tenetur explicabo omnis quae reprehenderit ad eum necessitatibus incidunt illo vitae nesciunt recusandae? Soluta iste ratione optio repellat nam?
+                    Consectetur nostrum dignissimos eaque officia. Laudantium aut in vel! Magnam perferendis deserunt, sunt aut quibusdam, accusantium culpa ea magni ducimus tempora harum molestias quisquam, saepe mollitia nobis odit fuga sint.
+                    Excepturi optio omnis tempore cum cupiditate at aspernatur delectus deserunt vitae unde eos ipsum, quam tenetur quis voluptates magnam error cumque autem labore dignissimos nam magni velit. Facilis, id temporibus!
+                    Iure, neque! Sequi ab repellat minus itaque delectus vitae et non nesciunt! Nisi quam ducimus eum temporibus expedita. Similique aliquam accusamus mollitia necessitatibus modi a nostrum nobis. Quisquam, vero minus.`,
+      image:
+        "https://www.google.com/imgres?q=image&imgurl=https%3A%2F%2Fgratisography.com%2Fwp-content%2Fuploads%2F2024%2F03%2Fgratisography-funflower-800x525.jpg&imgrefurl=https%3A%2F%2Fgratisography.com%2F&docid=YAe2I9AqIHgndM&tbnid=5RFroDSkyf1y6M&vet=12ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA..i&w=800&h=525&hcb=2&itg=1&ved=2ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA",
+    },
+    {
+      id: 3,
       name: "John Doe",
       review: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores officia excepturi laudantium nobis illum ipsum ad ullam impedit iste, vitae dolor pariatur aliquam, tempore voluptas sint fugit soluta maxime inventore!
                 Fugiat officia, molestias quo, est placeat debitis perferendis ipsam tempora excepturi tenetur explicabo omnis quae reprehenderit ad eum necessitatibus incidunt illo vitae nesciunt recusandae? Soluta iste ratione optio repellat nam?
@@ -29,24 +40,13 @@ const UserHome = () => {
         "https://www.google.com/imgres?q=image&imgurl=https%3A%2F%2Fgratisography.com%2Fwp-content%2Fuploads%2F2024%2F03%2Fgratisography-funflower-800x525.jpg&imgrefurl=https%3A%2F%2Fgratisography.com%2F&docid=YAe2I9AqIHgndM&tbnid=5RFroDSkyf1y6M&vet=12ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA..i&w=800&h=525&hcb=2&itg=1&ved=2ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA",
     },
     {
-      id: 3,
-      name: "John Doe",
-      review: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores officia excepturi laudantium nobis illum ipsum ad ullam impedit iste, vitae dolor pariatur aliquam, tempore voluptas sint fugit soluta maxime inventore!
-            Fugiat officia, molestias quo, est placeat debitis perferendis ipsam tempora excepturi tenetur explicabo omnis quae reprehenderit ad eum necessitatibus incidunt illo vitae nesciunt recusandae? Soluta iste ratione optio repellat nam?
-            Consectetur nostrum dignissimos eaque officia. Laudantium aut in vel! Magnam perferendis deserunt, sunt aut quibusdam, accusantium culpa ea magni ducimus tempora harum molestias quisquam, saepe mollitia nobis odit fuga sint.
-            Excepturi optio omnis tempore cum cupiditate at aspernatur delectus deserunt vitae unde eos ipsum, quam tenetur quis voluptates magnam error cumque autem labore dignissimos nam magni velit. Facilis, id temporibus!
-            Iure, neque! Sequi ab repellat minus itaque delectus vitae et non nesciunt! Nisi quam ducimus eum temporibus expedita. Similique aliquam accusamus mollitia necessitatibus modi a nostrum nobis. Quisquam, vero minus.`,
-      image:
-        "https://www.google.com/imgres?q=image&imgurl=https%3A%2F%2Fgratisography.com%2Fwp-content%2Fuploads%2F2024%2F03%2Fgratisography-funflower-800x525.jpg&imgrefurl=https%3A%2F%2Fgratisography.com%2F&docid=YAe2I9AqIHgndM&tbnid=5RFroDSkyf1y6M&vet=12ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA..i&w=800&h=525&hcb=2&itg=1&ved=2ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA",
-    },
-    {
       id: 4,
       name: "John Doe",
       review: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores officia excepturi laudantium nobis illum ipsum ad ullam impedit iste, vitae dolor pariatur aliquam, tempore voluptas sint fugit soluta maxime inventore!
-            Fugiat officia, molestias quo, est placeat debitis perferendis ipsam tempora excepturi tenetur explicabo omnis quae reprehenderit ad eum necessitatibus incidunt illo vitae nesciunt recusandae? Soluta iste ratione optio repellat nam?
-            Consectetur nostrum dignissimos eaque officia. Laudantium aut in vel! Magnam perferendis deserunt, sunt aut quibusdam, accusantium culpa ea magni ducimus tempora harum molestias quisquam, saepe mollitia nobis odit fuga sint.
-            Excepturi optio omnis tempore cum cupiditate at aspernatur delectus deserunt vitae unde eos ipsum, quam tenetur quis voluptates magnam error cumque autem labore dignissimos nam magni velit. Facilis, id temporibus!
-            Iure, neque! Sequi ab repellat minus itaque delectus vitae et non nesciunt! Nisi quam ducimus eum temporibus expedita. Similique aliquam accusamus mollitia necessitatibus modi a nostrum nobis. Quisquam, vero minus.`,
+                Fugiat officia, molestias quo, est placeat debitis perferendis ipsam tempora excepturi tenetur explicabo omnis quae reprehenderit ad eum necessitatibus incidunt illo vitae nesciunt recusandae? Soluta iste ratione optio repellat nam?
+                Consectetur nostrum dignissimos eaque officia. Laudantium aut in vel! Magnam perferendis deserunt, sunt aut quibusdam, accusantium culpa ea magni ducimus tempora harum molestias quisquam, saepe mollitia nobis odit fuga sint.
+                Excepturi optio omnis tempore cum cupiditate at aspernatur delectus deserunt vitae unde eos ipsum, quam tenetur quis voluptates magnam error cumque autem labore dignissimos nam magni velit. Facilis, id temporibus!
+                Iure, neque! Sequi ab repellat minus itaque delectus vitae et non nesciunt! Nisi quam ducimus eum temporibus expedita. Similique aliquam accusamus mollitia necessitatibus modi a nostrum nobis. Quisquam, vero minus.`,
       image:
         "https://www.google.com/imgres?q=image&imgurl=https%3A%2F%2Fgratisography.com%2Fwp-content%2Fuploads%2F2024%2F03%2Fgratisography-funflower-800x525.jpg&imgrefurl=https%3A%2F%2Fgratisography.com%2F&docid=YAe2I9AqIHgndM&tbnid=5RFroDSkyf1y6M&vet=12ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA..i&w=800&h=525&hcb=2&itg=1&ved=2ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA",
     },
@@ -54,10 +54,10 @@ const UserHome = () => {
       id: 5,
       name: "John Doe",
       review: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores officia excepturi laudantium nobis illum ipsum ad ullam impedit iste, vitae dolor pariatur aliquam, tempore voluptas sint fugit soluta maxime inventore!
-            Fugiat officia, molestias quo, est placeat debitis perferendis ipsam tempora excepturi tenetur explicabo omnis quae reprehenderit ad eum necessitatibus incidunt illo vitae nesciunt recusandae? Soluta iste ratione optio repellat nam?
-            Consectetur nostrum dignissimos eaque officia. Laudantium aut in vel! Magnam perferendis deserunt, sunt aut quibusdam, accusantium culpa ea magni ducimus tempora harum molestias quisquam, saepe mollitia nobis odit fuga sint.
-            Excepturi optio omnis tempore cum cupiditate at aspernatur delectus deserunt vitae unde eos ipsum, quam tenetur quis voluptates magnam error cumque autem labore dignissimos nam magni velit. Facilis, id temporibus!
-            Iure, neque! Sequi ab repellat minus itaque delectus vitae et non nesciunt! Nisi quam ducimus eum temporibus expedita. Similique aliquam accusamus mollitia necessitatibus modi a nostrum nobis. Quisquam, vero minus.`,
+                Fugiat officia, molestias quo, est placeat debitis perferendis ipsam tempora excepturi tenetur explicabo omnis quae reprehenderit ad eum necessitatibus incidunt illo vitae nesciunt recusandae? Soluta iste ratione optio repellat nam?
+                Consectetur nostrum dignissimos eaque officia. Laudantium aut in vel! Magnam perferendis deserunt, sunt aut quibusdam, accusantium culpa ea magni ducimus tempora harum molestias quisquam, saepe mollitia nobis odit fuga sint.
+                Excepturi optio omnis tempore cum cupiditate at aspernatur delectus deserunt vitae unde eos ipsum, quam tenetur quis voluptates magnam error cumque autem labore dignissimos nam magni velit. Facilis, id temporibus!
+                Iure, neque! Sequi ab repellat minus itaque delectus vitae et non nesciunt! Nisi quam ducimus eum temporibus expedita. Similique aliquam accusamus mollitia necessitatibus modi a nostrum nobis. Quisquam, vero minus.`,
       image:
         "https://www.google.com/imgres?q=image&imgurl=https%3A%2F%2Fgratisography.com%2Fwp-content%2Fuploads%2F2024%2F03%2Fgratisography-funflower-800x525.jpg&imgrefurl=https%3A%2F%2Fgratisography.com%2F&docid=YAe2I9AqIHgndM&tbnid=5RFroDSkyf1y6M&vet=12ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA..i&w=800&h=525&hcb=2&itg=1&ved=2ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA",
     },
@@ -65,10 +65,10 @@ const UserHome = () => {
       id: 6,
       name: "John Doe",
       review: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores officia excepturi laudantium nobis illum ipsum ad ullam impedit iste, vitae dolor pariatur aliquam, tempore voluptas sint fugit soluta maxime inventore!
-            Fugiat officia, molestias quo, est placeat debitis perferendis ipsam tempora excepturi tenetur explicabo omnis quae reprehenderit ad eum necessitatibus incidunt illo vitae nesciunt recusandae? Soluta iste ratione optio repellat nam?
-            Consectetur nostrum dignissimos eaque officia. Laudantium aut in vel! Magnam perferendis deserunt, sunt aut quibusdam, accusantium culpa ea magni ducimus tempora harum molestias quisquam, saepe mollitia nobis odit fuga sint.
-            Excepturi optio omnis tempore cum cupiditate at aspernatur delectus deserunt vitae unde eos ipsum, quam tenetur quis voluptates magnam error cumque autem labore dignissimos nam magni velit. Facilis, id temporibus!
-            Iure, neque! Sequi ab repellat minus itaque delectus vitae et non nesciunt! Nisi quam ducimus eum temporibus expedita. Similique aliquam accusamus mollitia necessitatibus modi a nostrum nobis. Quisquam, vero minus.`,
+                Fugiat officia, molestias quo, est placeat debitis perferendis ipsam tempora excepturi tenetur explicabo omnis quae reprehenderit ad eum necessitatibus incidunt illo vitae nesciunt recusandae? Soluta iste ratione optio repellat nam?
+                Consectetur nostrum dignissimos eaque officia. Laudantium aut in vel! Magnam perferendis deserunt, sunt aut quibusdam, accusantium culpa ea magni ducimus tempora harum molestias quisquam, saepe mollitia nobis odit fuga sint.
+                Excepturi optio omnis tempore cum cupiditate at aspernatur delectus deserunt vitae unde eos ipsum, quam tenetur quis voluptates magnam error cumque autem labore dignissimos nam magni velit. Facilis, id temporibus!
+                Iure, neque! Sequi ab repellat minus itaque delectus vitae et non nesciunt! Nisi quam ducimus eum temporibus expedita. Similique aliquam accusamus mollitia necessitatibus modi a nostrum nobis. Quisquam, vero minus.`,
       image:
         "https://www.google.com/imgres?q=image&imgurl=https%3A%2F%2Fgratisography.com%2Fwp-content%2Fuploads%2F2024%2F03%2Fgratisography-funflower-800x525.jpg&imgrefurl=https%3A%2F%2Fgratisography.com%2F&docid=YAe2I9AqIHgndM&tbnid=5RFroDSkyf1y6M&vet=12ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA..i&w=800&h=525&hcb=2&itg=1&ved=2ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA",
     },
@@ -76,20 +76,36 @@ const UserHome = () => {
       id: 7,
       name: "John Doe",
       review: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores officia excepturi laudantium nobis illum ipsum ad ullam impedit iste, vitae dolor pariatur aliquam, tempore voluptas sint fugit soluta maxime inventore!
-            Fugiat officia, molestias quo, est placeat debitis perferendis ipsam tempora excepturi tenetur explicabo omnis quae reprehenderit ad eum necessitatibus incidunt illo vitae nesciunt recusandae? Soluta iste ratione optio repellat nam?
-            Consectetur nostrum dignissimos eaque officia. Laudantium aut in vel! Magnam perferendis deserunt, sunt aut quibusdam, accusantium culpa ea magni ducimus tempora harum molestias quisquam, saepe mollitia nobis odit fuga sint.
-            Excepturi optio omnis tempore cum cupiditate at aspernatur delectus deserunt vitae unde eos ipsum, quam tenetur quis voluptates magnam error cumque autem labore dignissimos nam magni velit. Facilis, id temporibus!
-            Iure, neque! Sequi ab repellat minus itaque delectus vitae et non nesciunt! Nisi quam ducimus eum temporibus expedita. Similique aliquam accusamus mollitia necessitatibus modi a nostrum nobis. Quisquam, vero minus.`,
+                Fugiat officia, molestias quo, est placeat debitis perferendis ipsam tempora excepturi tenetur explicabo omnis quae reprehenderit ad eum necessitatibus incidunt illo vitae nesciunt recusandae? Soluta iste ratione optio repellat nam?
+                Consectetur nostrum dignissimos eaque officia. Laudantium aut in vel! Magnam perferendis deserunt, sunt aut quibusdam, accusantium culpa ea magni ducimus tempora harum molestias quisquam, saepe mollitia nobis odit fuga sint.
+                Excepturi optio omnis tempore cum cupiditate at aspernatur delectus deserunt vitae unde eos ipsum, quam tenetur quis voluptates magnam error cumque autem labore dignissimos nam magni velit. Facilis, id temporibus!
+                Iure, neque! Sequi ab repellat minus itaque delectus vitae et non nesciunt! Nisi quam ducimus eum temporibus expedita. Similique aliquam accusamus mollitia necessitatibus modi a nostrum nobis. Quisquam, vero minus.`,
       image:
         "https://www.google.com/imgres?q=image&imgurl=https%3A%2F%2Fgratisography.com%2Fwp-content%2Fuploads%2F2024%2F03%2Fgratisography-funflower-800x525.jpg&imgrefurl=https%3A%2F%2Fgratisography.com%2F&docid=YAe2I9AqIHgndM&tbnid=5RFroDSkyf1y6M&vet=12ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA..i&w=800&h=525&hcb=2&itg=1&ved=2ahUKEwjevM2t9eeIAxXFwjgGHQo7MU0QM3oECBkQAA",
     },
   ];
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       <TitleBar />
-      <div className="typo h-[80vh] flex items-center justify-center border pt-20 m-8 text-base-300">
-        Fam Fusion
+      <div className="typo h-[80vh] flex items-center flex-col border rounded-3xl m-8 px-20 pt-4">
+        <div className="text-[7rem] poppins-bold">
+          We help the kids find their real home
+          <div className="flex items-center justify-between p-20 gap-40">
+            <button className="text-lg min-w-max px-12 py-4 bg-accent rounded-xl text-black hover:bg-yellow-500">
+              <a href="/adopt">Adopt Now</a>
+            </button>
+            <p className="text-lg text-right text-gray-400">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
+              illo saepe, quod doloremque iure sint autem architecto eius ipsum
+              eum eveniet molestiae amet obcaecati error minima accusamus natus,
+              voluptate inventore! Eaque aliquam hic dolor dolore, expedita
+              magni id magnam odio, quos fugit non molestiae, perspiciatis nihil
+              saepe sequi sint. Animi quas, sequi maxime necessitatibus possimus
+              quisquam vitae unde non maiores? Nemo cumque maiores explicabo,
+              qui, nesciunt officia suscipit quam magni consectetur ratione
+            </p>
+          </div>
+        </div>
       </div>
       <Facts />
       <SectionWithImage
@@ -110,7 +126,7 @@ const UserHome = () => {
               visitor. Join us on this journey of growth and discovery, as we
               work together to build a brighter, more connected future.`,
         ]}
-        imgSrc="https://via.placeholder.com/320"
+        imgSrc="https://picsum.photos/320"
       />
       <SectionWithImage
         title="Our Vision"
@@ -129,7 +145,7 @@ const UserHome = () => {
               catalyst for positive change, strengthening communities and
               inspiring generations to come.`,
         ]}
-        imageSrc="https://via.placeholder.com/320"
+        imageSrc="https://picsum.photos/320"
         reverse
       />
       <SectionWithImage
@@ -149,7 +165,7 @@ const UserHome = () => {
               amplify our impact and create a network of support for those who
               need it most.`,
         ]}
-        imgSrc="https://via.placeholder.com/320"
+        imgSrc="https://picsum.photos/320"
       />
       <div className="comments-title min-h-[20vh] max-w-[80vw] mx-auto z-0 text-[11rem]">
         <h1 className="text-center">Hear From Our Satisfied Users</h1>
@@ -165,7 +181,7 @@ const UserHome = () => {
             >
               <div className="profile-pic h-[10rem] w-[10rem] m-0 mx-auto">
                 <img
-                  src="https://via.placeholder.com/160"
+                  src="https://picsum.photos/160"
                   className="rounded-badge"
                 />
               </div>
@@ -175,7 +191,7 @@ const UserHome = () => {
           ))}
         </div>
       </div>
-      <div className="last-section p-8 z-50 h-[80vh]">
+      <div className="last-section p-8 z-50 min-h-[80vh] ">
         <h1 className="text-left text-[6rem]">Connect with us</h1>
         <div className="connect-form bg-accent mx-24 h-[80vh] mt-16 rounded-t-[8rem] flex gap-16 justify-evenly items-center">
           <div className="left-links flex flex-col gap-16">
@@ -252,7 +268,7 @@ const UserHome = () => {
             </button>
           </form>
         </div>
-        <footer className="footer bg-base text-base-content border-none border-t px-10 py-4 ">
+        <footer className="footer bg-base text-base-content border-none border-t px-10 rounded-full py-4 bg-white">
           <aside className="grid-flow-col items-center">
             <svg
               width="24"

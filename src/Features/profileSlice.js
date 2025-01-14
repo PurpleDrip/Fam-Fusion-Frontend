@@ -12,10 +12,9 @@ const profileSlice = createSlice({
   initialState,
   reducers: {
     addToLiked: (state, action) => {
-      // Ensure max length of 15 for likedProfiles
       const updatedLikedProfiles = [
         ...state.likedProfiles.slice(-14), // Keep the last 14 elements
-        action.payload.profile, // Add the new profile
+        action.payload, // Add the new profile
       ];
       state.likedProfiles = updatedLikedProfiles;
       localStorage.setItem(
@@ -24,10 +23,9 @@ const profileSlice = createSlice({
       );
     },
     addToViewed: (state, action) => {
-      // Ensure max length of 30 for viewedProfiles
       const updatedViewedProfiles = [
         ...state.viewedProfiles.slice(-29), // Keep the last 29 elements
-        action.payload.profile, // Add the new profile
+        action.payload, // Add the new profile
       ];
       state.viewedProfiles = updatedViewedProfiles;
       localStorage.setItem(
@@ -36,8 +34,15 @@ const profileSlice = createSlice({
       );
     },
     removeFromLiked: (state, action) => {
+      if (
+        state.likedProfiles.length === 0 ||
+        !state.likedProfiles ||
+        !state.likedProfiles[0]
+      ) {
+        return;
+      }
       const updatedLikedProfiles = state.likedProfiles.filter(
-        (profile) => profile.id !== action.payload.id
+        (profile) => profile.id !== action.payload
       );
       state.likedProfiles = updatedLikedProfiles;
       localStorage.setItem(
@@ -45,9 +50,14 @@ const profileSlice = createSlice({
         JSON.stringify(updatedLikedProfiles)
       );
     },
+    logout: (state) => {
+      state.likedProfiles = [];
+      state.viewedProfiles = [];
+      localStorage.clear();
+    },
   },
 });
 
-export const { addToLiked, addToViewed, removeFromLiked } =
+export const { addToLiked, addToViewed, removeFromLiked, logout } =
   profileSlice.actions;
 export default profileSlice.reducer;

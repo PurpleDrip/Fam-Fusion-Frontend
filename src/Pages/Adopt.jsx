@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import ThemeController from "../Components/ThemeController";
 import TitleBar from "../Components/TitleBar";
 import AdoptHero from "../Components/AdoptHero";
 import { useSelector } from "react-redux";

@@ -1,22 +1,50 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import ThemeController from "../Components/ThemeController";
+import axios from "axios";
+import { hasRegistered, setorganName } from "../Features/organSlice";
 
 const RegisterOrgan = () => {
   const role = useSelector((state) => state.user.role);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [msg, setMsg] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    address: "",
+    password: "",
+  });
 
   useEffect(() => {
     if (role !== "organ") {
       navigate("/");
     }
   }, [role, navigate]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    axios
+      .post("http://localhost:3000/api/register/organ", formData, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        console.log(res);
+        dispatch(setorganName(res.data.name));
+        dispatch(hasRegistered());
+        navigate("/dashboard");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   return (
-    <div className="h-screen w-screen flex items-center justify-center">
+    <div className="h-screen w-screen flex items-center justify-center text-black">
       <div className="form-container p-8 rounded-xl bg-primary">
-        <form className="flex flex-col gap-4 w-[18rem]">
-          <h1 className="text-primary-content text-2xl">REGISTER</h1>
+        <form className="flex flex-col gap-4 w-[18rem]" onSubmit={handleSubmit}>
+          <h1 className="text-primary-content text-3xl">REGISTER</h1>
           <label className="form-control w-full max-w-xs">
             <div className="label">
               <span className="label-text text-primary-content">
@@ -27,6 +55,10 @@ const RegisterOrgan = () => {
               type="text"
               placeholder="John Adoption Center"
               className="input input-bordered w-full max-w-xs"
+              value={formData.name}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
             />
           </label>
           <label className="form-control w-full max-w-xs">
@@ -36,9 +68,13 @@ const RegisterOrgan = () => {
               </span>
             </div>
             <input
-              type="gmail"
+              type="email"
               placeholder="johnadoption@gmail.com"
               className="input input-bordered w-full max-w-xs"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
             />
           </label>
           <label className="form-control">
@@ -50,6 +86,10 @@ const RegisterOrgan = () => {
             <textarea
               className="textarea textarea-bordered h-24"
               placeholder="Church Street, Behind Hard Rock Cafe."
+              value={formData.address}
+              onChange={(e) =>
+                setFormData({ ...formData, address: e.target.value })
+              }
             ></textarea>
           </label>
           <label className="form-control w-full max-w-xs">
@@ -60,6 +100,10 @@ const RegisterOrgan = () => {
               type="password"
               placeholder="johnadoption@123"
               className="input input-bordered w-full max-w-xs"
+              value={formData.password}
+              onChange={(e) =>
+                setFormData({ ...formData, password: e.target.value })
+              }
             />
           </label>
           <button
@@ -75,6 +119,7 @@ const RegisterOrgan = () => {
             Already have an account??
           </Link>
         </form>
+        <h1 className="text-lg text-red-300 text-center">{msg}</h1>
       </div>
     </div>
   );

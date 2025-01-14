@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   addToLiked,
@@ -7,22 +7,48 @@ import {
   removeFromLiked,
 } from "../Features/profileSlice";
 
-const Cards = ({ data, key }) => {
-  const [showInfo, setShowInfo] = useState(false);
+const Cards = ({ data }) => {
   const [isSaved, setIsSaved] = useState(false);
+
+  const [msg, setMsg] = useState("");
+
+  const isRegistered = useSelector((state) => state.user.isRegistered);
+
+  const checkForRegistered = () => {
+    if (!isRegistered) {
+      setMsg("Please login first to perform these operations.");
+      throw new Error("Please login first to perform these operations.");
+    }
+    return true;
+  };
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const handleClick = () => {
+    if (checkForRegistered()) {
+      isSaved ? dispatch(removeFromLiked(data.id)) : dispatch(addToLiked(data));
+      console.log(isSaved);
+      setIsSaved((prev) => !prev);
+    }
+  };
+  const handleViewClick = () => {
+    if (checkForRegistered()) {
+      dispatch(addToViewed(data));
+      console.log(data);
+      navigate(`/profile/${data.id}`);
+    }
+  };
+
   return (
     <div
-      key={key}
+      key={data.id}
       className="border-2 border-neutral h-[25rem] w-[20rem] flex flex-col items-center p-4 gap-2 relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow hover:border-accent"
     >
       {/* Profile Picture */}
       <div className="relative">
         <img
-          src={data.imageUrl}
+          src="https://picsum.photos/192"
           alt="Child Profile"
           className="h-[12rem] w-[12rem] rounded-full object-cover shadow-md"
         />
@@ -37,12 +63,7 @@ const Cards = ({ data, key }) => {
       <div className="flex gap-2 mt-2 items-center">
         <h1 className="text-gray-400">Like this Profile?</h1>
         <button
-          onClick={() => {
-            setIsSaved(!isSaved);
-            isSaved
-              ? dispatch(removeFromLiked(data))
-              : dispatch(addToLiked(data));
-          }}
+          onClick={handleClick}
           className={`${isSaved ? "text-red-500" : "text-gray-400"} text-2xl `}
           title="Add to favourite"
         >
@@ -51,32 +72,10 @@ const Cards = ({ data, key }) => {
       </div>
       <button
         className="btn btn-accent mt-2 btn-outline btn-wide"
-        onClick={() => {
-          navigate("/profile");
-          dispatch(addToViewed(data));
-        }}
+        onClick={handleViewClick}
       >
         View Profile
       </button>
-
-      {showInfo && (
-        <div className="absolute inset-0 bg-white bg-opacity-90 p-4 flex flex-col gap-2 justify-center items-center text-center rounded-lg">
-          <h2 className="text-lg font-bold text-black">Details</h2>
-          <ul className="text-sm text-gray-700 space-y-1">
-            <li>Age: 7 years</li>
-            <li>Gender: Female</li>
-            <li>Location: California</li>
-            <li>Health: No Known Conditions</li>
-            <li>Hobbies: Drawing, Cycling</li>
-          </ul>
-          <button
-            className="btn btn-secondary mt-4"
-            onClick={() => setShowInfo(false)}
-          >
-            Close
-          </button>
-        </div>
-      )}
     </div>
   );
 };

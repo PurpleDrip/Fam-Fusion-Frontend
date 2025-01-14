@@ -14,7 +14,7 @@ function SectionWithImage({ title, paragraphs, imageSrc, reverse = false }) {
           className="absolute -z-1 rounded-full"
         />
         <img
-          src={imageSrc || "https://via.placeholder.com/320"}
+          src={imageSrc || "https://picsum.photos/320"}
           alt={title}
           className="z-0 rounded-full bg-white w-[20rem]"
         />
