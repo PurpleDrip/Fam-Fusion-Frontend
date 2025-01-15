@@ -1,9 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setUserRole } from "../Features/userSlice";
+import {
+  hasRegistered as hasRegisteredUser,
+  setUserRole,
+} from "../Features/userSlice";
 import { redirect, useNavigate } from "react-router-dom";
 import { use } from "react";
 import axios from "axios";
+import { hasRegistered as hasRegisteredOrgan } from "../Features/organSlice";
 
 const Role = () => {
   useEffect(() => {
@@ -28,8 +32,10 @@ const Role = () => {
   const handleRoleSelection = (role) => {
     dispatch(setUserRole(role));
     {
-      role === "user" && navigate("/home");
-      role === "organ" && navigate("/dashboard");
+      role === "user" && dispatch(hasRegisteredUser()) && navigate("/home");
+      role === "organ" &&
+        dispatch(hasRegisteredOrgan()) &&
+        navigate("/dashboard");
     }
   };
   return (
